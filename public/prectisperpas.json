@@ -1,0 +1,50 @@
+[
+    {
+    "BiodataId": 1,
+    "BiodataType": "Male",
+    "ProfileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVN9H11wCam0PY3Wp44gEjVOWihP2BNyltg&s",
+    "PermanentDivision": "Dhaka",
+    "Age": "30",
+    "Occupation": "Job"
+    },
+    {
+    "BiodataId": 2,
+    "BiodataType": "Female",
+    "ProfileImage": "https://previews.123rf.com/images/kwasny221/kwasny2211702/kwasny221170200104/71086783-beautiful-gril-spring-portrait.jpg",
+    "PermanentDivision": "Chattagram",
+    "Age": "23",
+    "Occupation": "Student"
+    },
+    {
+    "BiodataId": 3,
+    "BiodataType": "Male",
+    "ProfileImage": "https://i.pinimg.com/550x/cd/13/9b/cd139b6f6b65b92e74d14ea9b5e1e80a.jpg",
+    "PermanentDivision": "Rangpur",
+    "Age": "45",
+    "Occupation": "Job"
+    },
+    {
+    "BiodataId": 4,
+    "BiodataType": "Female",
+    "ProfileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR5qp70nt3w6ELfAabYuCwp-m_zu25SmjNsA&s",
+    "PermanentDivision": "Barisal",
+    "Age": "30",
+    "Occupation": "House wife"
+    },
+    {
+    "BiodataId": 5,
+    "BiodataType": "Male",
+    "ProfileImage": "https://c1.wallpaperflare.com/preview/742/718/349/young-boy-asian-indian-boy-summer-color-boy-young.jpg",
+    "PermanentDivision": "Khulna",
+    "Age": "23",
+    "Occupation": "Student"
+    },
+    {
+    "BiodataId": 6,
+    "BiodataType": "Female",
+    "ProfileImage": "https://img.freepik.com/premium-photo/simple-looking-indian-girl-wearing-saree_5095-752.jpg",
+    "PermanentDivision": "Sylhet",
+    "Age": "45",
+    "Occupation": "Job"
+    }
+    ]

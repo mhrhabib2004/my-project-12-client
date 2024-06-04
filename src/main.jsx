@@ -15,6 +15,7 @@ import ViewProfile from './Pages/Home/SixPremium/SixPremiumView/ViewProfile';
 import AuthProvider from './Provaiders/AuthProvider';
 import SignIn from './Pages/Sherd/Login/SignIn';
 import SignUp from './Pages/Sherd/SignUp/SignUp';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/ViewProfile/:id',
-        element:<ViewProfile></ViewProfile>
+        element:<PrivateRoute><ViewProfile></ViewProfile></PrivateRoute>
       },
       {
         path:'/login',

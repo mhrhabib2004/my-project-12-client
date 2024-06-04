@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provaiders/AuthProvider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import SocialLogin from "../../../Components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -40,7 +41,7 @@ const SignUp = () => {
     <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
       <div className="max-w-md mx-auto">
         <div>
-          <h1 className="text-2xl font-semibold">Login</h1>
+          <h1 className="text-2xl font-semibold">Registration</h1>
         </div>
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className="divide-y divide-gray-200">
@@ -136,12 +137,9 @@ const SignUp = () => {
       </form>
       </div>
       <div className="w-full flex justify-center">
-        <button className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-          
-          <span>Continue with Google</span>
-        </button>
+        <SocialLogin></SocialLogin>
       </div>
-      <p><small>New Here? <Link to="/login">login</Link> </small></p>
+      <p><small>Already have acount? <Link to="/login">login</Link> </small></p>
     </div>
   </div>
 </div>

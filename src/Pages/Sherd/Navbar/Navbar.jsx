@@ -4,16 +4,29 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {user}=useAuth();
+    const {user,logOut}=useAuth();
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
 
     const navlinks =
         <>
             <Link className='px-3 py-2 text-lg font-normal mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/"}>Home</Link>
             <Link className='px-3 text-lg font-normal  py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/biodatas"}>Biodatas</Link>
             <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/AboutUs"}>About Us</Link>
-            <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/ContactUs"}>Contac tUs</Link>
-            <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/login"}>Login</Link>
-        </>;
+            <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/ContactUs"}>Contac Us</Link>
+            
+            {
+                user ? 
+                <Link onClick={handleLogOut} className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'>Sign Out</Link> :
+                <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/login"}>Login</Link>
+                
+            }
+
+        </>
 
     return (
         <nav className="fixed z-10 bg-opacity-30 container mx-auto  text-white bg-gray-100 shadow dark:bg-gray-800">
@@ -21,7 +34,7 @@ const Navbar = () => {
                 <div className="lg:flex lg:items-center lg:justify-between">
                     <div className="flex items-center justify-between">
                         <a href="#">
-                            <img className="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="Logo" />
+                            <img className="w-auto h-10 sm:h-7" src="https://i.pinimg.com/736x/b9/5e/40/b95e402a4fff281cb5df2376bbd19899.jpg" alt="Logo" />
                         </a>
 
                         {/* Mobile menu button */}
@@ -51,15 +64,15 @@ const Navbar = () => {
                             {navlinks}
                         </div>
 
-                        <div className="flex items-center mt-4 lg:mt-0">
+                       {user && <div className="flex items-center mt-4 lg:mt-0">
                             <button type="button" className="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
                                 <div className="w-10 h-10 overflow-hidden border-2 border-gray-400 rounded-full">
-                                    <img src={user?.photoUrl} className="object-cover w-full h-full" alt="avatar" />
+                                    <img src={user?.photoURL} className="object-cover w-full h-full" alt="avatar" />
                                 </div>
 
                                 <h3 className="mx-2 text-gray-700 dark:text-gray-200">{user?.displayName}</h3>
                             </button>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>

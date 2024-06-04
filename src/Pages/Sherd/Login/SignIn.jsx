@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provaiders/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../../../Components/SocialLogin/SocialLogin";
 
 
 const SignIn = () => {
@@ -84,11 +85,8 @@ const SignIn = () => {
             </div>
           </form>
           </div>
-          <div className="w-full flex justify-center">
-            <button className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-              
-              <span>Continue with Google</span>
-            </button>
+          <div className="w-full flex justify-center">      
+             <SocialLogin></SocialLogin>
           </div>
           <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
         </div>

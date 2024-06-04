@@ -16,6 +16,8 @@ import AuthProvider from './Provaiders/AuthProvider';
 import SignIn from './Pages/Sherd/Login/SignIn';
 import SignUp from './Pages/Sherd/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Dashboard from './Leyout/Dashboard';
+import Alluser from './Pages/Dashboard/Alluser/Alluser';
 
 const router = createBrowserRouter([
   {
@@ -57,7 +59,13 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element:
+    element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children:[
+     {
+      path:'allusers',
+      element:<Alluser></Alluser>
+     }
+    ]
   }
 ]);
 

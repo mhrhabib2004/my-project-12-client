@@ -18,6 +18,7 @@ const Navbar = () => {
             <Link className='px-3 text-lg font-normal  py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/biodatas"}>Biodatas</Link>
             <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/AboutUs"}>About Us</Link>
             <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/ContactUs"}>Contac Us</Link>
+            <Link className='px-3 text-lg font-normal py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700' to={"/dashboard"}>Dashboard</Link>
             
             {
                 user ? 

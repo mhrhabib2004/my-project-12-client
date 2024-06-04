@@ -2,11 +2,13 @@ import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 
 
 const SocialLogin = () => {
+    const axiosPublic = useAxiosPublic();
     const { googleSignIn } = useAuth();
    
     const navigate = useNavigate();
@@ -15,8 +17,15 @@ const SocialLogin = () => {
         googleSignIn()
         .then(result =>{
             console.log(result.user);
-            navigate('/');
-            
+            const userInfo = {
+                email: result.user?.email,
+                name: result.user?.displayName
+            }
+            axiosPublic.post('/users', userInfo)
+            .then(res =>{
+                console.log(res.data);
+                navigate('/');
+            })
         })
     }
 

@@ -4,7 +4,7 @@ const WorksSection = () => {
         <div className="mt-7"> 
         <h2 className="text-3xl text-center font-bold uppercase text-green-500">How it works</h2>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6 lg:grid-cols-3">
-            <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
+            <div className="w-full  px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
            
             <div>
                 <h1 className="mt-2 text-lg font-semibold text-gray-800 dark:text-white">Misspelled Matrimony:</h1>
@@ -16,7 +16,7 @@ const WorksSection = () => {
 
             
         </div>
-            <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
+            <div className="w-full  px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
            
             <div>
                 <h1 className="mt-2 text-lg font-semibold text-gray-800 dark:text-white"> Modern Take on Matrimony (Metromony):</h1>
@@ -28,7 +28,7 @@ const WorksSection = () => {
 
             
         </div>
-            <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
+            <div className="w-full  px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
            
             <div>
                 <h1 className="mt-2 text-lg font-semibold text-gray-800 dark:text-white">Specific Service (Metromony):</h1>

@@ -1,7 +1,9 @@
 
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUser } from "react-icons/fa";
+import { RiUserStarFill } from "react-icons/ri";
+import { MdOutlineApproval } from "react-icons/md";
 
 
 
@@ -11,7 +13,7 @@ const Dashboard = () => {
     const { user } = useAuth();
 
     // TODO: get isAdmin value from the database
-    // const [isAdmin] = useAdmin();
+    const isAdmin = true;
 
     return (
         <div className="flex">
@@ -19,11 +21,11 @@ const Dashboard = () => {
             {/* <div className="w-64 min-h-screen bg-orange-400 ">
                 
             </div> */}
-            <aside className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-sky-500 border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+            <aside className="flex flex-col w-72 h-screen px-4 py-8 overflow-y-auto bg-sky-500 border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
 
 
                 <div className="flex flex-col justify-between flex-1 mt-6">
-                    <ul className="p-4">
+                    <ul className=" text-md font-semibold">
                         {/* <a
             className="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200"
             href="#"
@@ -32,13 +34,56 @@ const Dashboard = () => {
             <span className="mx-4 font-medium">Dashboard</span>
           </a> */}
 
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/adminHome">
+                        {
+                           isAdmin ? <>
+                           <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard">
                                 <FaHome></FaHome>
-                                Admin Home</NavLink>
+                                Admin Dashboard</NavLink>
+                        </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/manage">
+                                <FaUser></FaUser>
+                                Manage Users</NavLink>
+                        </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/approvedPremium">
+                            <RiUserStarFill />
+                                Approved Premium</NavLink>
+                        </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/approvedContactRequest">
+                            <MdOutlineApproval />
+                                Approved Contact Request</NavLink>
                         </li>
 
 
+                           </> :<>
+                           <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard">
+                                <FaHome></FaHome>
+                                Edit Biodata</NavLink>
+                        </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/manage">
+                                <FaUser></FaUser>
+                                View Biodata</NavLink>
+                        </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/approvedPremium">
+                            <RiUserStarFill />
+                            My Contact Request</NavLink>
+                        </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/approvedContactRequest">
+                            <MdOutlineApproval />
+                            Favourites Biodata</NavLink>
+                        </li>
+
+
+                           
+                           </>
+                        }
                         <hr className="my-6 border-gray-200 dark:border-gray-600" />
 
                         <a
@@ -46,7 +91,7 @@ const Dashboard = () => {
                             href="#"
                         >
 
-                            <span className="mx-4 font-medium">Settings</span>
+                            <span className="mx-4 font-medium">Logout</span>
                         </a>
                     </ul>
 

@@ -15,7 +15,7 @@ const Dashboard = () => {
     const { user } = useAuth();
 
     // TODO: get isAdmin value from the database
-    const isAdmin = true;
+    const isAdmin = false;
 
     return (
         <div className="flex">
@@ -60,7 +60,7 @@ const Dashboard = () => {
                         </li>
 
 
-                           </> :<>
+                           </> : <>
                            <li >
                             <NavLink  className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/editbio">
                             <FaEdit />

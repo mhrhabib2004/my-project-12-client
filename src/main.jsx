@@ -18,6 +18,15 @@ import SignUp from './Pages/Sherd/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Dashboard from './Leyout/Dashboard';
 import Alluser from './Pages/Dashboard/Alluser/Alluser';
+import ViewBioDatadetails from './Pages/BiodatasPage/ViewBioDatadetails';
+import EditBioData from './Pages/Dashboard/Alluser/UserRoute/EditbioData/EditBioData';
+import ViewBioData from './Pages/Dashboard/Alluser/UserRoute/ViewBioData/ViewBioData';
+import MyContactReq from './Pages/Dashboard/Alluser/UserRoute/MycontactReq/MyContactReq';
+import FavouritesBiodata from './Pages/Dashboard/Alluser/UserRoute/FavouritesBiodata/FavouritesBiodata';
+import AdminDashboard from './Pages/Dashboard/AdminPage/AdminDashboard/AdminDashboard';
+import ManageUsers from './Pages/Dashboard/AdminPage/ManageUsers/ManageUsers';
+import ApprovedPremium from './Pages/Dashboard/AdminPage/ApprovedPremium/ApprovedPremium';
+import ApprovedContactReq from './Pages/Dashboard/AdminPage/ApprovedContactReq/ApprovedContactReq';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +62,10 @@ const router = createBrowserRouter([
       {
         path:'/signup',
         element:<SignUp></SignUp>
+      },
+      {
+        path:'/viewbiodata/:id',
+        element:<ViewBioDatadetails></ViewBioDatadetails>
       }
      
     ]
@@ -61,10 +74,46 @@ const router = createBrowserRouter([
     path: 'dashboard',
     element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children:[
+      // admin route
+      {
+        path:'dashboard',
+        element:<AdminDashboard></AdminDashboard>
+
+      },
+      {
+        path:'manage',
+        element:<ManageUsers></ManageUsers>
+      },
+      {
+        path:'approvedPremium',
+        element:<ApprovedPremium></ApprovedPremium>
+
+      },
+      {
+        path:'approvedContactRequest',
+        element:<ApprovedContactReq></ApprovedContactReq>
+      },
      {
       path:'allusers',
       element:<Alluser></Alluser>
-     }
+     },
+    //  userrout
+    {
+      path:'editbio',
+      element:<EditBioData></EditBioData>
+    },
+    {
+      path:'viewbio',
+      element:<ViewBioData></ViewBioData>
+    },
+    {
+      path:'contactreq',
+      element:<MyContactReq></MyContactReq>
+    },
+    {
+      path:'favouritesbio',
+      element:<FavouritesBiodata></FavouritesBiodata>
+    }
     ]
   }
 ]);

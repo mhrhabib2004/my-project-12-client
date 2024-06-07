@@ -1,9 +1,11 @@
 
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { FaHome, FaUser } from "react-icons/fa";
+import { FaEdit, FaFileContract, FaHome, FaUser } from "react-icons/fa";
 import { RiUserStarFill } from "react-icons/ri";
 import { MdOutlineApproval } from "react-icons/md";
+import { CiViewTable } from "react-icons/ci";
+import { SiFavro } from "react-icons/si";
 
 
 
@@ -60,23 +62,23 @@ const Dashboard = () => {
 
                            </> :<>
                            <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard">
-                                <FaHome></FaHome>
+                            <NavLink  className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/editbio">
+                            <FaEdit />
                                 Edit Biodata</NavLink>
                         </li>
                         <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/manage">
-                                <FaUser></FaUser>
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/viewbio">
+                            <CiViewTable />
                                 View Biodata</NavLink>
                         </li>
                         <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/approvedPremium">
-                            <RiUserStarFill />
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/contactreq">
+                            <FaFileContract />
                             My Contact Request</NavLink>
                         </li>
                         <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/approvedContactRequest">
-                            <MdOutlineApproval />
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/favouritesbio">
+                            <SiFavro />
                             Favourites Biodata</NavLink>
                         </li>
 

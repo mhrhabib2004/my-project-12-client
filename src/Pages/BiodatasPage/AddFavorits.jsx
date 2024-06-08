@@ -21,12 +21,13 @@ const AddFavorits = () => {
     }
 
     // Destructure the biodata entry
-    const { biodataType, name, profileImage, dateOfBirth, height, weight, age, occupation, race, fathersName, mothersName, permanentDivision, presentDivision, expectedPartnerAge, expectedPartnerHeight, expectedPartnerWeight, contactEmail, mobileNumber } = fabiodata;
+    const { biodataType, name, profileImage, dateOfBirth, height, weight, age, occupation, race, fathersName, mothersName, permanentDivision, presentDivision, expectedPartnerAge, expectedPartnerHeight, expectedPartnerWeight, contactEmail, mobileNumber,biodataId } = fabiodata;
 
     const handleAddFavorites = e => {
         e.preventDefault();
 
         const fabio = {
+            Biodataid: biodataId,
             BiodataType: biodataType,
             Name: name,
             ProfileImage: profileImage,

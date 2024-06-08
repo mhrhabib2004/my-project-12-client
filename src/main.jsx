@@ -27,6 +27,7 @@ import AdminDashboard from './Pages/Dashboard/AdminPage/AdminDashboard/AdminDash
 import ManageUsers from './Pages/Dashboard/AdminPage/ManageUsers/ManageUsers';
 import ApprovedPremium from './Pages/Dashboard/AdminPage/ApprovedPremium/ApprovedPremium';
 import ApprovedContactReq from './Pages/Dashboard/AdminPage/ApprovedContactReq/ApprovedContactReq';
+import AddFavorits from './Pages/BiodatasPage/AddFavorits';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path:'/viewbiodata/:id',
         element:<ViewBioDatadetails></ViewBioDatadetails>
+      },
+      {
+        path:`/addfavourits/:id`,
+        element:<AddFavorits></AddFavorits>
       }
      
     ]

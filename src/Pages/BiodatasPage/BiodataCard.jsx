@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const BiodataCard = ({bio}) => {
+const BiodataCard = ({bio,index}) => {
     // console.log(bio);
     const {biodataType,name,profileImage,dateOfBirth,height,weight,age,occupation,race,fathersName,mothersName,permanentDivision,presentDivision,expectedPartnerAge,expectedPartnerHeight,expectedPartnerWeight,contactEmail,mobileNumber,biodataId}=bio;
     return (
@@ -10,7 +10,7 @@ const BiodataCard = ({bio}) => {
             <img className="object-cover w-full h-56 md:h-64 lg:h-80" src={profileImage} alt="avatar" />
 
             <div className="py-5 text-center">
-                <h1>Biodata Id :{biodataId} </h1>
+                <h1>Biodata Id : {index+1} </h1>
                 <h1>Biodata Type :{biodataType} </h1>
                 <h1>Permanent Division : {permanentDivision} </h1>
                 <h1>Age :{age} </h1>

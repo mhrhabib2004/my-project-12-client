@@ -28,6 +28,7 @@ import ApprovedPremium from './Pages/Dashboard/AdminPage/ApprovedPremium/Approve
 import ApprovedContactReq from './Pages/Dashboard/AdminPage/ApprovedContactReq/ApprovedContactReq';
 import AddFavorits from './Pages/BiodatasPage/AddFavorits';
 import ManageUser from './Pages/Dashboard/AdminPage/ManageUser/ManageUser';
+import Checkout from './Pages/BiodatasPage/Checkout/Checkout';
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path:`/addfavourits/:id`,
         element:<AddFavorits></AddFavorits>
+      },
+      {
+        path:'/checkout/:id',
+        element:<Checkout></Checkout>
       }
      
     ]

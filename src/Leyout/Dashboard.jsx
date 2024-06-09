@@ -15,7 +15,7 @@ const Dashboard = () => {
     const { user } = useAuth();
 
     // TODO: get isAdmin value from the database
-    const isAdmin = false;
+    const isAdmin = true;
 
     return (
         <div className="flex">

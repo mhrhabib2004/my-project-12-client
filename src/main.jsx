@@ -24,10 +24,10 @@ import ViewBioData from './Pages/Dashboard/Alluser/UserRoute/ViewBioData/ViewBio
 import MyContactReq from './Pages/Dashboard/Alluser/UserRoute/MycontactReq/MyContactReq';
 import FavouritesBiodata from './Pages/Dashboard/Alluser/UserRoute/FavouritesBiodata/FavouritesBiodata';
 import AdminDashboard from './Pages/Dashboard/AdminPage/AdminDashboard/AdminDashboard';
-import ManageUsers from './Pages/Dashboard/AdminPage/ManageUsers/ManageUsers';
 import ApprovedPremium from './Pages/Dashboard/AdminPage/ApprovedPremium/ApprovedPremium';
 import ApprovedContactReq from './Pages/Dashboard/AdminPage/ApprovedContactReq/ApprovedContactReq';
 import AddFavorits from './Pages/BiodatasPage/AddFavorits';
+import ManageUser from './Pages/Dashboard/AdminPage/ManageUser/ManageUser';
 
 const router = createBrowserRouter([
   {
@@ -81,13 +81,13 @@ const router = createBrowserRouter([
     children:[
       // admin route
       {
-        path:'dashboard',
+        path:'/dashboard',
         element:<AdminDashboard></AdminDashboard>
 
       },
       {
         path:'manage',
-        element:<ManageUsers></ManageUsers>
+        element:<ManageUser></ManageUser>
       },
       {
         path:'approvedPremium',

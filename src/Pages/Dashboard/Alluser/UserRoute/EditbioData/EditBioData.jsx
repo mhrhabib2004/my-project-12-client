@@ -1,8 +1,5 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../../Hooks/useAuth";
-import useBio from "../../../../../Hooks/useBio";
-import useAxiosPublic from "../../../../../Hooks/useAxiosPublic";
-import useAxiosSecure from "../../../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
 
@@ -14,7 +11,7 @@ const EditBioData = () => {
     const onsubmit = async (data) =>{
         console.log(data);
        
-        fetch('http://localhost:5000/bio',{
+        fetch(`${import.meta.env.VITE_LINK}/bio`,{
             method:'POST',
             headers:{
                 'content-type':'application/json'

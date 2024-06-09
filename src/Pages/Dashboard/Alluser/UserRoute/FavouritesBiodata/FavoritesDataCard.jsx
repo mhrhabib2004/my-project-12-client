@@ -17,7 +17,7 @@ const FavoritesDataCard = ({ favorite }) => {
         .then(willDelete => {
             if (willDelete) {
                
-                fetch(`http://localhost:5000/addfavourits/${_id}`, {
+                fetch(`${import.meta.env.VITE_LINK}/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

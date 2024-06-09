@@ -4,7 +4,7 @@ const usePremiun = () => {
     const [premium,setPremium]=useState([]);
     const [loding,setloding]=useState(true);
         useEffect (()=>{
-            fetch('http://localhost:5000/premium')
+            fetch(`${import.meta.env.VITE_LINK}/premium`)
             .then(res=>res.json())
             .then(data=>{
                 setPremium(data)

@@ -4,7 +4,7 @@ const useBio = () => {
     const [biodata, setBiodata] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/bio')
+        fetch(`${import.meta.env.VITE_LINK}/bio`)
             .then(res => res.json())
             .then(data => {
                 setBiodata(data);

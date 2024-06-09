@@ -49,7 +49,7 @@ const AddFavorits = () => {
             email: user?.email,
         };
 
-        fetch('http://localhost:5000/addfavourits', {
+        fetch(`${import.meta.env.VITE_LINK}/addfavourits`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

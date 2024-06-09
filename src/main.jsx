@@ -118,7 +118,7 @@ const router = createBrowserRouter([
     {
       path:'favouritesbio',
       element:<FavouritesBiodata></FavouritesBiodata>,
-      loader:()=>fetch('http://localhost:5000/addfavourits')
+      loader:()=>fetch(`${import.meta.env.VITE_LINK}/addfavourits`)
     }
     ]
   }

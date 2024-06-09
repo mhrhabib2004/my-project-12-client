@@ -14,7 +14,7 @@ const SuccessStory = () => {
     const [sortOrder, setSortOrder] = useState('ascending');
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`${import.meta.env.VITE_LINK}/reviews`)
             .then(res => res.json())
             .then(data => {
                 const sortedData = sortReviews(data, sortOrder);

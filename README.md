@@ -10,7 +10,16 @@ Email: admin@email.com
 Password: Admin1@
 
 # Features
-
+- User Role Management: Manage different user roles like admin, premium, and user.
+- Search Functionality: Efficient search feature to find users by username.
+- Modals and Dropdowns: Use of accessible UI components for updating user roles.
+- Form Handling and Validation: Efficiently handle and validate forms using react-hook-form.
+- Toast Notifications: Real-time notifications using react-hot-toast.
+- Skeleton Loading Screens: Enhance user experience with loading skeletons.
+- Admin Dashboard: Comprehensive dashboard for managing users and content.
+- User Authentication: Secure user authentication using Firebase.
+- Responsive Design: Fully responsive design to support various devices.
+- Rating System: Integrated rating system for user profiles.
 
 # Usage Packages
 - @headlessui/react: Accessible UI components for React.

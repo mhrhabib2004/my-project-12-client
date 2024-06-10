@@ -1,18 +1,27 @@
 
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
 import LoadingCard from "../Pages/Sherd/LoadingCard/LoadingCard";
 import UserButton from "../Pages/Dashboard/UserButton/UserButton";
 import AdminButton from "../Pages/Dashboard/AdminButton/AdminButton";
+import { CiLogout } from "react-icons/ci";
+import { FaHome } from "react-icons/fa";
 
 
 
 
 const Dashboard = () => {
     // const [cart] = useCart();
-    const { user } = useAuth();
+    const { user,logOut } = useAuth();
+    const navigate=useNavigate();
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+            navigate('/')
 
+    }
 
 
     // TODO: get isAdmin value from the database
@@ -49,12 +58,21 @@ const Dashboard = () => {
                         <hr className="my-6 border-gray-200 dark:border-gray-600" />
 
                         <a
-                            className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                            href="#"
+                            className="flex items-center  px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                           
                         >
+                            <CiLogout />
 
-                            <span className="mx-4 font-medium">Logout</span>
+                            <button onClick={handleLogOut} className="mx-4 font-medium">Logout</button>
                         </a>
+                        <Link to={"/"}
+                            className="flex items-center  px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                           
+                        >
+                            <FaHome></FaHome>
+
+                            <button  className="mx-4 font-medium">Home</button>
+                        </Link>
                     </ul>
 
                     <a href="#" className="flex items-center px-4 -mx-2">

@@ -7,7 +7,7 @@ const useBio = (pageNumber) => {
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            const response = await fetch(`${import.meta.env.VITE_LINK}/bio?page=${pageNumber}`);
+            const response = await fetch(`${import.meta.env.VITE_LINK}/bio?page=${pageNumber}&perPage=10`);
             const data = await response.json();
             setBiodata(data);
             setLoading(false);

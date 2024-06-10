@@ -11,7 +11,7 @@ const SuccessCounter = () => {
       
     
       useEffect(() => {
-        fetch("http://localhost:5000/dashboard")
+        fetch(`${import.meta.env.VITE_LINK}/dashboard`)
           .then(res => res.json())
           .then(data => setDashboardData(data))
           .catch(err => console.error("Error fetching dashboard data:", err));

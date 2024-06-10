@@ -12,7 +12,7 @@ const Checkout = () => {
     event.preventDefault();
     const { email, cardNumber } = event.target.elements;
 
-    const response = await fetch('http://localhost:5000/contact-request', {
+    const response = await fetch(`${import.meta.env.VITE_LINK}/contact-request`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

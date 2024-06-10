@@ -5,7 +5,7 @@ const useSearchUsers = (search) => {
   return useQuery(
     ['searchUsers', search],
     async () => {
-      const { data } = await axios.get(`http://localhost:5000/users?username=${search}`);
+      const { data } = await axios.get(`${import.meta.env.VITE_LINK}/users?username=${search}`);
       return data;
     },
     {

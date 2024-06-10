@@ -3,7 +3,6 @@ import {  Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
 import LoadingCard from "../Pages/Sherd/LoadingCard/LoadingCard";
-import useRole from "../Hooks/useRole";
 import UserButton from "../Pages/Dashboard/UserButton/UserButton";
 import AdminButton from "../Pages/Dashboard/AdminButton/AdminButton";
 

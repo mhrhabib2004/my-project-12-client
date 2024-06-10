@@ -30,6 +30,8 @@ import AddFavorits from './Pages/BiodatasPage/AddFavorits';
 import ManageUser from './Pages/Dashboard/AdminPage/ManageUser/ManageUser';
 import Checkout from './Pages/BiodatasPage/Checkout/Checkout';
 import {  QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Gotmarrid from './Pages/Dashboard/Alluser/UserRoute/Gotmarrid/Gotmarrid';
+import Succses from './Pages/Dashboard/AdminPage/Succes/Succses';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -69,7 +71,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/viewbiodata/:id',
-        element:<ViewBioDatadetails></ViewBioDatadetails>
+        element:<PrivateRoute><ViewBioDatadetails></ViewBioDatadetails></PrivateRoute>
       },
       {
         path:`/addfavourits/:id`,
@@ -77,7 +79,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/checkout/:id',
-        element:<Checkout></Checkout>
+        element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
       }
      
     ]
@@ -109,6 +111,10 @@ const router = createBrowserRouter([
       path:'allusers',
       element:<Alluser></Alluser>
      },
+     {
+      path:'successstory',
+      element:<Succses></Succses>
+     },
     //  userrout
     {
       path:'editbio',
@@ -126,6 +132,10 @@ const router = createBrowserRouter([
       path:'favouritesbio',
       element:<FavouritesBiodata></FavouritesBiodata>,
       loader:()=>fetch(`${import.meta.env.VITE_LINK}/addfavourits`)
+    },
+    {
+      path:'gotmarrid',
+      element:<Gotmarrid></Gotmarrid>
     }
     ]
   }

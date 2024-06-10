@@ -1,17 +1,26 @@
 import { useEffect, useState } from "react";
 
-const useBio = () => {
+const useBio = (pageNumber) => {
     const [biodata, setBiodata] = useState([]);
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_LINK}/bio`)
-            .then(res => res.json())
-            .then(data => {
-                setBiodata(data);
+        const fetchData = async () => {
+            setLoading(true);
+            const response = await fetch(`${import.meta.env.VITE_LINK}/bio?page=${pageNumber}`);
+            const data = await response.json();
+            setBiodata(data);
+            setLoading(false);
+        };
+
+        fetchData()
+            .catch(error => {
+                console.error("Error fetching biodata:", error);
                 setLoading(false);
             });
-    }, [])
-    return [biodata, loading]
-}
+    }, [pageNumber]);
+
+    return [biodata, loading];
+};
     
 export default useBio;

@@ -25,6 +25,11 @@ const UserButton = () => {
                             <SiFavro />
                             Favourites Biodata</NavLink>
                         </li>
+                        <li >
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/gotmarrid">
+                            <SiFavro />
+                            Got Married Route</NavLink>
+                        </li>
 
         </div>
     );

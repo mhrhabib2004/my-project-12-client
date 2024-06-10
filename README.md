@@ -7,9 +7,11 @@ Visit Matrimony Application
 
 # Admin Credentials
 Email: admin@email.com
+
 Password: Admin1@
 
 # Features
+
 - User Role Management: Manage different user roles like admin, premium, and user.
 - Search Functionality: Efficient search feature to find users by username.
 - Modals and Dropdowns: Use of accessible UI components for updating user roles.

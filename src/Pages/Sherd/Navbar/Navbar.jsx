@@ -35,7 +35,7 @@ const Navbar = () => {
                 <div className="lg:flex lg:items-center lg:justify-between">
                     <div className="flex items-center justify-between">
                         <a href="#">
-                            <img className="w-auto h-10 sm:h-7" src="https://i.pinimg.com/736x/b9/5e/40/b95e402a4fff281cb5df2376bbd19899.jpg" alt="Logo" />
+                            <img className="w-28 h-12 " src="https://i.ibb.co/D7Nkz6Y/logo-2.png" alt="Logo" />
                         </a>
 
                         {/* Mobile menu button */}
@@ -71,7 +71,7 @@ const Navbar = () => {
                                     <img src={user?.photoURL} className="object-cover w-full h-full" alt="avatar" />
                                 </div>
 
-                                <h3 className="mx-2 text-gray-700 dark:text-gray-200">{user?.displayName}</h3>
+                                {/* <h3 className="mx-2 text-gray-700 dark:text-gray-200">{user?.displayName}</h3> */}
                             </button>
                         </div>}
                     </div>

@@ -1,5 +1,5 @@
 
-import {  Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
 import LoadingCard from "../Pages/Sherd/LoadingCard/LoadingCard";
@@ -11,17 +11,17 @@ import AdminButton from "../Pages/Dashboard/AdminButton/AdminButton";
 
 const Dashboard = () => {
     // const [cart] = useCart();
-    const { user} = useAuth();
+    const { user } = useAuth();
 
 
 
     // TODO: get isAdmin value from the database
-    const [role,isLoading] = useAdmin();
+    const [role, isLoading] = useAdmin();
     // const [role,isLoading]=useRole();
     // const isAdmin = false;
-    console.log(role,'sssss')
+    console.log(role, 'sssss')
 
-    if(isLoading){
+    if (isLoading) {
         return <LoadingCard></LoadingCard>
     }
 
@@ -43,9 +43,9 @@ const Dashboard = () => {
             
             <span className="mx-4 font-medium">Dashboard</span>
           </a> */}
-          {role === 'admin' && <AdminButton></AdminButton>}
+                        {role === 'admin' && <AdminButton></AdminButton>}
 
-                    {role === 'user' && <UserButton></UserButton>}
+                        {(role === 'user' || role === 'premium') && <UserButton />}
                         <hr className="my-6 border-gray-200 dark:border-gray-600" />
 
                         <a

@@ -8,7 +8,7 @@ const AdminButton = () => {
     return (
         <div>
                                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard">
+                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="admindashboard">
                                 <FaHome></FaHome>
                                 Admin Dashboard</NavLink>
                         </li>

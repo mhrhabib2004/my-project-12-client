@@ -1,8 +1,29 @@
-# React + Vite
+# Matrimony 
+# Overview
+Matrimony is a comprehensive web application designed to facilitate the management and interaction of matrimonial profiles. The application leverages modern web technologies and libraries to ensure a smooth and efficient user experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Live Site URL (https://matrimony-74eaf.web.app/)
+Visit Matrimony Application
 
-Currently, two official plugins are available:
+# Admin Credentials
+Email: admin@email.com
+Password: Admin1@
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features
+
+
+# Usage Packages
+- @headlessui/react: Accessible UI components for React.
+- @smastrom/react-rating: Rating component for React.
+- @tanstack/react-query: Hooks for fetching, caching, and updating asynchronous data.
+- axios: Promise-based HTTP client.
+- firebase: Firebase services integration.
+- react: JavaScript library for building user interfaces.
+- react-dom: React library for DOM manipulation.
+- react-hook-form: Form management library.
+- react-hot-toast: Library for displaying toast notifications.
+- react-icons: Collection of popular icons for React.
+- react-router-dom: DOM bindings for React Router.
+- sweetalert2: Library for creating alert dialogs.
+- swiper: Modern mobile touch slider.
+

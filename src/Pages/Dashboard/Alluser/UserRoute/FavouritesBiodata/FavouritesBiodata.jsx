@@ -1,8 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import FavoritesDataCard from "./FavoritesDataCard";
+import useAuth from "../../../../../Hooks/useAuth";
 
 const FavouritesBiodata = () => {
-    const favorites=useLoaderData();
+  const {user}=useAuth();
+    const favorites = useLoaderData();
+
+    const faver=favorites.filter(fb => fb.email === user?.email)
+    console.log(faver)
     // console.log(favorites)
     
     return (
@@ -19,7 +24,7 @@ const FavouritesBiodata = () => {
                  <div>
         
         {
-           favorites.map(favorite=><FavoritesDataCard key={favorite._id} favorite={favorite}></FavoritesDataCard>)
+           faver.map(favorite=><FavoritesDataCard key={favorite._id} favorite={favorite}></FavoritesDataCard>)
        }
    
       </div>

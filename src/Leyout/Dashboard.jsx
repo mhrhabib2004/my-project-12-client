@@ -1,21 +1,30 @@
 
-import { NavLink, Outlet } from "react-router-dom";
+import {  Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { FaEdit, FaFileContract, FaHome, FaUser } from "react-icons/fa";
-import { RiUserStarFill } from "react-icons/ri";
-import { MdOutlineApproval } from "react-icons/md";
-import { CiViewTable } from "react-icons/ci";
-import { SiFavro } from "react-icons/si";
+import useAdmin from "../Hooks/useAdmin";
+import LoadingCard from "../Pages/Sherd/LoadingCard/LoadingCard";
+import useRole from "../Hooks/useRole";
+import UserButton from "../Pages/Dashboard/UserButton/UserButton";
+import AdminButton from "../Pages/Dashboard/AdminButton/AdminButton";
 
 
 
 
 const Dashboard = () => {
     // const [cart] = useCart();
-    const { user } = useAuth();
+    const { user} = useAuth();
+
+
 
     // TODO: get isAdmin value from the database
-    const isAdmin = false;
+    const [role,isLoading] = useAdmin();
+    // const [role,isLoading]=useRole();
+    // const isAdmin = false;
+    console.log(role,'sssss')
+
+    if(isLoading){
+        return <LoadingCard></LoadingCard>
+    }
 
     return (
         <div className="flex">
@@ -35,57 +44,9 @@ const Dashboard = () => {
             
             <span className="mx-4 font-medium">Dashboard</span>
           </a> */}
+          {role === 'admin' && <AdminButton></AdminButton>}
 
-                        {
-                           isAdmin ? <>
-                           <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard">
-                                <FaHome></FaHome>
-                                Admin Dashboard</NavLink>
-                        </li>
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/manage">
-                                <FaUser></FaUser>
-                                Manage Users</NavLink>
-                        </li>
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/approvedPremium">
-                            <RiUserStarFill />
-                                Approved Premium</NavLink>
-                        </li>
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/approvedContactRequest">
-                            <MdOutlineApproval />
-                                Approved Contact Request</NavLink>
-                        </li>
-
-
-                           </> : <>
-                           <li >
-                            <NavLink  className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/editbio">
-                            <FaEdit />
-                                Edit Biodata</NavLink>
-                        </li>
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/viewbio">
-                            <CiViewTable />
-                                View Biodata</NavLink>
-                        </li>
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-3" to="/dashboard/contactreq">
-                            <FaFileContract />
-                            My Contact Request</NavLink>
-                        </li>
-                        <li >
-                            <NavLink className="flex items-center px-4 py-2 text-gray-700  rounded-md dark:bg-gray-800 dark:text-gray-200 gap-2" to="/dashboard/favouritesbio">
-                            <SiFavro />
-                            Favourites Biodata</NavLink>
-                        </li>
-
-
-                           
-                           </>
-                        }
+                    {role === 'user' && <UserButton></UserButton>}
                         <hr className="my-6 border-gray-200 dark:border-gray-600" />
 
                         <a

@@ -29,6 +29,8 @@ import ApprovedContactReq from './Pages/Dashboard/AdminPage/ApprovedContactReq/A
 import AddFavorits from './Pages/BiodatasPage/AddFavorits';
 import ManageUser from './Pages/Dashboard/AdminPage/ManageUser/ManageUser';
 import Checkout from './Pages/BiodatasPage/Checkout/Checkout';
+import {  QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -131,10 +133,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
    <AuthProvider>
    <div className='container mx-auto'>
    <RouterProvider router={router} />
    </div>
    </AuthProvider>
+   </QueryClientProvider>
   </React.StrictMode>,
 )
